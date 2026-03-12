@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMaT Practical Quiz 2 - Final</title>
+    <script src="script/aframe.js"></script>
+</head>
+
+<body>
+    <a-scene fog="type: exponential; color: #CCC; density: 0.02" shadow="type: pcfsoft" renderer="antialias: true">
+        <!-- lighting for realism -->
+        <a-light type="ambient" color="#777"></a-light>
+        <a-light type="directional" intensity="0.8" position="0.5 1 0.5" castShadow="true" shadow-mapSize-width="1024" shadow-mapSize-height="1024"></a-light>
+        <a-assets>
+            <img src="media/CONCRETE.jpg" id="concrete">
+            <img src="media/blacktexture.jpg" id="table-tex">
+            <img src="media/woodtexture.jpg" id="woodtext">
+            <img src="media/greengrass.jpg" id="grass">
+            <img src="media/sky5.jpg" id="sky">
+            <img src="media/cups.jpg" alt="" id="cups">
+            <img src="media/milk.jpg" id="milk" alt="">
+            <img src="media/milo.jpg" id="milo" alt="">
+            <img src="media/straw.jpg" id="straw" alt="">
+            <img src="media/floor4.jpg" id="brick" alt="">
+            <img src="media/floor5.jpg" id="floor5" alt="">
+            <img src="media/table1.jpg" alt="" id="table1">
+        </a-assets>
+
+        <a-sky src="#sky"></a-sky>
+        <a-plane src="#grass" rotation="-90 0 0" width="100" height="100" repeat="20 20" shadow="receive: true"></a-plane>
+
+        <a-entity id="main-structure" position="0 0 -10">
+
+            <a-cylinder src="#brick" radius="6" height="5" position="0 2.5 0" open-ended="true" side="double" theta-length="300" rotation="0 30 0" shadow="cast: true; receive: true"></a-cylinder>
+
+
+            <a-box src="#concrete" position="0 0 7" width="1.5" height="0.1" depth="0.5" shadow="cast: true; receive: true"></a-box>
+            <a-box src="#concrete" position="0 0.0 6" width="1.5" height="0.1" depth="0.5" shadow="cast: true; receive: true"></a-box>
+            <a-box src="#concrete" position="0 0 5" width="1.5" height="0.1" depth="0.5" shadow="cast: true; receive: true"></a-box>
+            <a-box src="#concrete" position="0 0 4" width="1.5" height="0.2" depth="0.5" shadow="cast: true; receive: true"></a-box>
+            <a-box src="#concrete" position="0 0 3" width="1.5" height="0.5" depth="0.5" shadow="cast: true; receive: true"></a-box>
+
+            <a-box position="0 0.1 2.8" width="1.2" height="0.2" depth="0.6" color="#888" shadow="cast: true; receive: true"></a-box>
+            <a-box position="0 0.3 2.3" width="1.2" height="0.2" depth="0.6" color="#999" shadow="cast: true; receive: true"></a-box>
+
+            <a-cylinder src="#concrete" radius="3" height="0.5" position="0 0.25 0"></a-cylinder>
+
+            <a-cylinder color="#9cdb9c" radius="2.8" height="3" position="0 2 0" open-ended="true" side="double" theta-length="290" rotation="0 35 0"></a-cylinder>
+
+            <a-cone src="#straw" radius-bottom="3.2" height="1.8" position="0 4.4 0"></a-cone>
+
+            <a-entity id="furniture-set" position="0 0.5 0">
+
+                <a-cylinder src="#table-tex" radius="0.9" height="0.1" position="0 0.8 0" shadow="cast: true; receive: true" material="roughness:0.8; metalness:0.2"></a-cylinder>
+                <a-cylinder src="#table1" radius="0.3" height="0.8" position="0 0.4 0"></a-cylinder>
+
+                <a-entity position="0.3 1.0 0.1">
+                    <a-cylinder src="#milo" radius="0.12" height="0.2"></a-cylinder>
+
+                </a-entity>
+                <a-entity position="0 1 0.3">
+                    <a-cylinder src="#milo" radius="0.12" height="0.2"></a-cylinder>
+                </a-entity>
+
+                <a-entity position="-0.4 0.99 -0.1">
+                    <a-cylinder src="#milk" radius="0.1" height="0.2"></a-cylinder>
+                </a-entity>
+
+                <a-entity position="-0.3 0.99 0.5">
+                    <a-cylinder src="#milk" radius="0.1" height="0.2"></a-cylinder>
+                </a-entity>
+
+                <a-cylinder src="#cups" radius="0.06" height="0.15" open-ended="true" side="double" position="0.5 0.98 0.4" shadow="cast: true"></a-cylinder>
+
+                 <a-cylinder src="#cups" radius="0.06" height="0.15" open-ended="true" side="double" position="-0.6 0.97 0.4" shadow="cast: true"></a-cylinder>
+
+                <!-- ═══════════════ CHAIR 1 – FRONT  ═══════════════ -->
+      <!-- Seat -->
+      <a-box position="0 0.53 -0.95"
+             width="0.52" height="0.045" depth="0.48"
+             color="#9e5a28" shadow="cast: true; receive: true">
+      </a-box>
+      <!-- Back rest -->
+      <a-box position="0 0.83 -1.16"
+             width="0.52" height="0.56" depth="0.045"
+             color="#9e5a28" shadow="cast: true; receive: true">
+      </a-box>
+      <!-- Back support bar -->
+      <a-box position="0 0.62 -1.16"
+             width="0.52" height="0.055" depth="0.04"
+             color="#7a4420" shadow="cast: true; receive: true">
+      </a-box>
+      <!-- Legs -->
+      <a-cylinder position="-0.21 0.25 -0.73" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position=" 0.21 0.25 -0.73" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position="-0.21 0.25 -1.15" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position=" 0.21 0.25 -1.15" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+
+      <!-- ═══════════════ CHAIR 2 – BACK  ═══════════════ -->
+      <a-box position="0 0.53 0.95"
+             width="0.52" height="0.045" depth="0.48"
+             color="#9e5a28" shadow="cast: true; receive: true">
+      </a-box>
+      <a-box position="0 0.83 1.16"
+             width="0.52" height="0.56" depth="0.045"
+             color="#9e5a28" shadow="cast: true; receive: true">
+      </a-box>
+      <a-box position="0 0.62 1.16"
+             width="0.52" height="0.055" depth="0.04"
+             color="#7a4420" shadow="cast: true; receive: true">
+      </a-box>
+      <a-cylinder position="-0.21 0.25 0.73" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position=" 0.21 0.25 0.73" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position="-0.21 0.25 1.15" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position=" 0.21 0.25 1.15" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+
+      <!-- ═══════════════ CHAIR 3 – LEFT  ═══════════════ -->
+      <a-box position="-0.95 0.53 0"
+             width="0.48" height="0.045" depth="0.52"
+             color="#9e5a28" shadow="cast: true; receive: true">
+      </a-box>
+      <a-box position="-1.16 0.83 0"
+             width="0.045" height="0.56" depth="0.52"
+             color="#9e5a28" shadow="cast: true; receive: true">
+      </a-box>
+      <a-box position="-1.16 0.62 0"
+             width="0.04" height="0.055" depth="0.52"
+             color="#7a4420" shadow="cast: true; receive: true">
+      </a-box>
+      <a-cylinder position="-0.73 0.25 -0.21" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position="-0.73 0.25  0.21" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position="-1.15 0.25 -0.21" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position="-1.15 0.25  0.21" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+
+      <!-- ═══════════════ CHAIR 4 – RIGHT  ═══════════════ -->
+      <a-box position="0.95 0.53 0"
+             width="0.48" height="0.045" depth="0.52"
+             color="#9e5a28" shadow="cast: true; receive: true">
+      </a-box>
+      <a-box position="1.16 0.83 0"
+             width="0.045" height="0.56" depth="0.52"
+             color="#9e5a28" shadow="cast: true; receive: true">
+      </a-box>
+      <a-box position="1.16 0.62 0"
+             width="0.04" height="0.055" depth="0.52"
+             color="#7a4420" shadow="cast: true; receive: true">
+      </a-box>
+      <a-cylinder position="0.73 0.25 -0.21" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position="0.73 0.25  0.21" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position="1.15 0.25 -0.21" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+      <a-cylinder position="1.15 0.25  0.21" radius="0.028" height="0.50" color="#7a4420"></a-cylinder>
+
+            </a-entity>
+        </a-entity>
+        <a-entity camera look-controls wasd-controls position="0 1.6 2"></a-entity>
+    </a-scene>
+</body>
+
+</html>
